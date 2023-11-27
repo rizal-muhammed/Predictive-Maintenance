@@ -164,3 +164,6 @@ secrets/*
 
 test.py
 test.yaml
+
+# input data
+artifacts/*

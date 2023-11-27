@@ -1,0 +1,6 @@
+artifacts_root : artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://data.nasa.gov/download/ff5v-kuh6/application%2Fzip
+  destination_folder: artifacts/data_ingestion

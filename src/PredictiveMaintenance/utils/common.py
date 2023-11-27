@@ -22,7 +22,7 @@ def read_yaml(path_to_yaml) -> ConfigBox:
         Returns
         -------
         ConfigBox or None
-            Returns ConfigBox or None type.
+            Returns the content of yaml file read in ConfigBox type.
 
         Raises
         ------
@@ -30,7 +30,7 @@ def read_yaml(path_to_yaml) -> ConfigBox:
             If the yaml file is empty or not in right format.
         Exception
 
-        """
+    """
     try:
         path_to_yaml = Path(path_to_yaml)
         with open(path_to_yaml) as yaml_file:
@@ -63,7 +63,7 @@ def create_directories(path_to_directories: list, verbose=True):
         ------
         Exception
 
-        """
+    """
     try:
         for path in path_to_directories:
             path = Path(path)
