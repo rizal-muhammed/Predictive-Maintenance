@@ -27,3 +27,35 @@ data_validation_training_params:
     's_20',
     's_21'
   ]
+
+database_insertion_training_params:
+  db_name: "training_db"
+  table_name: "good_raw_data"
+  column_names: {
+    'unit_number': INT(25),
+    'time_cycles': INT(25),
+    'setting_1': FLOAT(25),
+    'setting_2': FLOAT(25),
+    'setting_3': FLOAT(25),
+    's_1': FLOAT(25),
+    's_2': FLOAT(25),
+    's_3': FLOAT(25),
+    's_4': FLOAT(25),
+    's_5': FLOAT(25),
+    's_6': FLOAT(25),
+    's_7': FLOAT(25),
+    's_8': FLOAT(25),
+    's_9': FLOAT(25),
+    's_10': FLOAT(25),
+    's_11': FLOAT(25),
+    's_12': FLOAT(25),
+    's_13': FLOAT(25),
+    's_14': FLOAT(25),
+    's_15': FLOAT(25),
+    's_16': FLOAT(25),
+    's_17': FLOAT(25),
+    's_18': FLOAT(25),
+    's_19': FLOAT(25),
+    's_20': FLOAT(25),
+    's_21': FLOAT(25)
+  }

@@ -18,3 +18,42 @@ data_validation_training:
   training_source_dir: artifacts/data_ingestion/train
   file_name_regex: train_FD\d+\.txt
   number_of_columns: 26
+
+data_transformation_training:
+  good_dir: artifacts/data_validation/training_raw_files_validated/good_raw
+  bad_dir: artifacts/data_validation/training_raw_files_validated/bad_raw
+  archive_bad_dir: artifacts/data_validation/archive_bad_dir
+  column_names: [
+    'unit_number',
+    'time_cycles',
+    'setting_1',
+    'setting_2',
+    'setting_3',
+    's_1',
+    's_2',
+    's_3',
+    's_4',
+    's_5',
+    's_6',
+    's_7',
+    's_8',
+    's_9',
+    's_10',
+    's_11',
+    's_12',
+    's_13',
+    's_14',
+    's_15',
+    's_16',
+    's_17',
+    's_18',
+    's_19',
+    's_20',
+    's_21'
+  ]
+
+database_operations_training:
+  root_dir: artifacts/training_file_from_db
+  file_name: inputfile.csv
+  good_dir: artifacts/data_validation/training_raw_files_validated/good_raw
+  bad_dir: artifacts/data_validation/training_raw_files_validated/bad_raw

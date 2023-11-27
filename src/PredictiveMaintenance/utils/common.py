@@ -1,5 +1,6 @@
 import os
 import yaml
+import shutil
 
 from box import ConfigBox
 from box.exceptions import BoxValueError
@@ -73,3 +74,35 @@ def create_directories(path_to_directories: list, verbose=True):
     
     except Exception as e:
         raise e
+
+@ensure_annotations
+def remove_directories(path_to_directories: list, verbose=True):
+    """
+        remove directories(if exists) in the list provided.
+
+        Parameters
+        ----------
+        path_to_directories : list
+            A list of paths to create.
+        verbose : bool(optional) : defaults to True
+            Controls the verbosity. If True, messages are displayed.
+
+        Returns
+        -------
+        None
+
+        Raises
+        ------
+        Exception
+
+    """
+    try:
+        for path in path_to_directories:
+            path = Path(path)
+            shutil.rmtree(path)
+            if verbose:
+                logger.info(f"removed directory at: {path}")
+    
+    except Exception as e:
+        raise e
+
