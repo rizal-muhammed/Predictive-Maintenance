@@ -4,3 +4,17 @@ data_ingestion:
   root_dir: artifacts/data_ingestion
   source_URL: https://data.nasa.gov/download/ff5v-kuh6/application%2Fzip
   destination_folder: artifacts/data_ingestion
+  train_file_name_regex: train_FD\d+\.txt
+  test_file_name_regex1: test_FD\d+\.txt
+  test_file_name_regex2: RUL_FD\d+\.txt
+  train_destination_folder: artifacts/data_ingestion/train
+  test_destination_folder: artifacts/data_ingestion/test
+  miscellaneous_folder: artifacts/data_ingestion/miscellaneous
+
+data_validation_training:
+  root_dir: artifacts/data_validation/training_raw_files_validated
+  good_dir: artifacts/data_validation/training_raw_files_validated/good_raw
+  bad_dir: artifacts/data_validation/training_raw_files_validated/bad_raw
+  training_source_dir: artifacts/data_ingestion/train
+  file_name_regex: train_FD\d+\.txt
+  number_of_columns: 26
