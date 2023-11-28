@@ -59,3 +59,17 @@ database_insertion_training_params:
     's_20': FLOAT(25),
     's_21': FLOAT(25)
   }
+
+model_training_params:
+  linear_regression_params:
+    fit_intercept: [True, False]
+    copy_X: [True, False]
+  random_forest_params:
+    n_estimators: [10, 50, 100]
+    max_features: ["sqrt", "log2"]
+    max_depth: [2, 10]
+    criterion: ["squared_error", "absolute_error", "friedman_mse"]
+  svr_params:
+    kernel: ["linear", "poly", "rbf"]
+    C: [0.1, 1, 10]
+  test_size: 0.2

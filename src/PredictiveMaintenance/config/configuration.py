@@ -1,3 +1,4 @@
+from pathlib import Path
 from PredictiveMaintenance.constants import CONFIG_FILE_PATH, PARAMS_FILE_PATH, SECRETS_FILE_PATH
 from PredictiveMaintenance.utils import common
 from PredictiveMaintenance.entity import (DataIngestionConfig,
@@ -6,7 +7,10 @@ from PredictiveMaintenance.entity import (DataIngestionConfig,
                                           DataTransformationTrainingConfig,
                                           DataBaseOperationsTrainingConfig,
                                           DataBaseOperationsTrainingCredentials,
-                                          DataBaseOperationsTrainingParams)
+                                          DataBaseOperationsTrainingParams,
+                                          DataPreProcessingTrainingConfig,
+                                          ModelTrainingConfig,
+                                          ModelTrainingParams)
 
 class ConfigurationManager:
     def __init__(self, config_filepath=CONFIG_FILE_PATH,
@@ -109,3 +113,39 @@ class ConfigurationManager:
         )
 
         return data_base_operations_training_params
+    
+    def get_data_preprocessing_training_config(self, ) -> DataPreProcessingTrainingConfig:
+        data_preprocessing = self.config.data_preprocessing_training
+        
+        data_preprocessing_training_config = DataPreProcessingTrainingConfig(
+            root_dir = data_preprocessing.root_dir,
+            input_filepath = data_preprocessing.input_filepath,
+            preprocessed_input_data_dir = data_preprocessing.preprocessed_input_data_dir,
+        )
+
+        return data_preprocessing_training_config
+    
+    def get_model_training_config(self, ) -> ModelTrainingConfig:
+        model_training = self.config.model_training
+
+        model_training_config = ModelTrainingConfig(
+            root_dir = model_training.root_dir,
+            models_dir = model_training.models_dir,
+            figures_dir = model_training.figures_dir,
+            preprocessed_X = Path(model_training.preprocessed_X),
+            preprocessed_y = Path(model_training.preprocessed_y)
+        )
+
+        return model_training_config
+    
+    def get_model_training_params(self, ) -> ModelTrainingParams:
+        model_training = self.params.model_training_params
+
+        model_training_params = ModelTrainingParams(
+            linear_regression_params = model_training.linear_regression_params,
+            random_forest_params = model_training.random_forest_params,
+            svr_params = model_training.svr_params,
+            test_size = model_training.test_size,
+        )
+
+        return model_training_params

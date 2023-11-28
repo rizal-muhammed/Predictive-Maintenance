@@ -57,3 +57,16 @@ database_operations_training:
   file_name: inputfile.csv
   good_dir: artifacts/data_validation/training_raw_files_validated/good_raw
   bad_dir: artifacts/data_validation/training_raw_files_validated/bad_raw
+
+data_preprocessing_training:
+  root_dir: artifacts/preprocessed_data
+  input_filepath: artifacts/training_file_from_db/inputfile.csv
+  preprocessed_input_data_dir: artifacts/preprocessed_data/preprocessed_data
+
+model_training:
+  root_dir: artifacts/model_training
+  models_dir: artifacts/model_training/best_model
+  figures_dir: artifacts/model_training/figures
+  preprocessed_X: artifacts/preprocessed_data/preprocessed_data/preprocessed_input_X.csv
+  preprocessed_y: artifacts/preprocessed_data/preprocessed_data/preprocessed_input_y.csv
+  
